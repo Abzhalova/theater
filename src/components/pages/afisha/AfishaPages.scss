@@ -1,0 +1,19 @@
+#poster {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    .poster {
+      position: relative;
+      margin-top: 100px;
+      h1 {
+        font-size: var(--sz-h1);
+        font-family: "Noto Serif";
+        padding: 30px 10px;
+        color: #b17e4b;
+      }
+    }
+  }
+}

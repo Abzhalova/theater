@@ -1,0 +1,43 @@
+/*-------------------------*/
+/*   Custom properties     */
+/*-------------------------*/
+
+:root {
+  /*  colors */
+  /* primary colors */
+  --clr-black: #000010;
+  --clr-grey: #cacac8;
+  --clr-white: #ffffff;
+  --clr-brown: #b6846b;
+  --clr-red: #f73149;
+
+  /*  typography  --heading  */
+  --sz-h1: 3rem;
+  --sz-h2: 1.3rem;
+  --sz-h3: 1.1rem;
+
+  /*  typography  --body  */
+  --sz-p-m: 1rem;
+  --sz-p-s: 0.9rem;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:" MuseoSans", sans-serif;
+}
+// .container {
+//   width: 90%;
+//   margin: 0 auto;
+// }
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+input {
+  outline: none;
+  border: none;
+}
