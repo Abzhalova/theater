@@ -1,0 +1,26 @@
+#gallery {
+  background: var(--clr-grey);
+  height: 100%;
+  position: sticky;
+  .gallery {
+    h1 {
+      font-size: var(--sz-h1);
+      font-family: "Noto Serif";
+      padding-top: 120px;
+      padding-bottom: 20px;
+      color: #b17e4b;
+    }
+    &--grid {
+      column-count: 4;
+      column-gap: 10px;
+      padding: 0 20px;
+      img {
+        width: 100%;
+        margin-bottom: 10px;
+        display: block;
+        border-radius: 4px;
+        break-inside: avoid;
+      }
+    }
+  }
+}
