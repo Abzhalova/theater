@@ -1,9 +1,9 @@
 import React from "react";
-import "./Abonement.scss";
+import "./Subscription.scss";
 import Abonement1 from "../../../assets/images/abonement1.jpg";
 import Abonement2 from "../../../assets/images/abonement2.jpg";
 
-const Abonement = () => {
+const Subscription = () => {
   return (
     <div id="subscription">
       <div className="container">
@@ -21,7 +21,6 @@ const Abonement = () => {
               спекталдерине жарайт
             </h3>
             <button>Сатып алуу</button>
-            <hr style={{ marginTop: "20px" }} />
           </center>
         </div>
       </div>
@@ -29,4 +28,4 @@ const Abonement = () => {
   );
 };
 
-export default Abonement;
+export default Subscription;

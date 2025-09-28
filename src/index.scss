@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /*-------------------------*/
 /*   Custom properties     */
 /*-------------------------*/
@@ -9,7 +12,8 @@
   --clr-grey: #cacac8;
   --clr-white: #ffffff;
   --clr-brown: #b6846b;
-  --clr-red: #f73149;
+  --clr-red: #e73a3c;
+  --clr-grey-2: #f4f4f4;
 
   /*  typography  --heading  */
   --sz-h1: 3rem;
@@ -19,13 +23,13 @@
   /*  typography  --body  */
   --sz-p-m: 1rem;
   --sz-p-s: 0.9rem;
-  
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family:" MuseoSans", sans-serif;
+  font-family: Scada, serif;
+
 }
 // .container {
 //   width: 90%;

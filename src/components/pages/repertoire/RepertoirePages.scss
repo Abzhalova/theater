@@ -1,0 +1,117 @@
+#repertoire {
+  margin-top: 120px;
+  .repertoire {
+    display: flex;
+    align-items: flex-start;
+    // border: 1px solid red;
+    width: 70%;
+    margin: 0 auto;
+    p {
+      font-family: "Scada", sans-serif;
+      text-transform: uppercase;
+      line-height: 20px;
+    }
+    h3 {
+      font-family: "Scada", sans-serif;
+      font-size: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 40px 0;
+    }
+    h4 {
+      text-transform: uppercase;
+      font-family: "Scada", sans-serif;
+      font-size: 20px;
+      margin-bottom: 40px;
+      line-height: 25px;
+    }
+    &--list1 {
+      background: var(--clr-brown);
+      color: var(--clr-grey-2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 600px;
+      padding: 50px 20px;
+      &--blockLogo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        h2 {
+          text-align: center;
+          line-height: 1.5;
+          font-weight: 400;
+          font-family: "DINPro", sans-serif;
+          text-transform: uppercase;
+          span {
+            font-size: 60px;
+          }
+        }
+      }
+      &--adminPart {
+        margin: 50px auto;
+        p {
+          width: 100%;
+          font-size: 12px;
+        }
+      }
+      &--logoAddress {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 10px;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: var(--clr-black);
+        }
+      }
+    }
+    &--list2 {
+      background: var(--clr-grey-2);
+      padding: 15px 40px;
+     
+      &__block {
+        border: 1px solid var(--clr-grey);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        margin-bottom: 35px;
+        p{
+          font-size: 10px;
+         
+        }
+        span{
+          font-size: 10px;
+          font-weight: 400;
+        }
+        img {
+          width: 90px;
+          height: 80px;
+          margin-right: 15px;
+          border-bottom-right-radius: 30px;
+        }
+        .timeBlock{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .nameBlock{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .age{
+            border: 2px solid red;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+           
+          }
+        }
+      }
+    }
+  }
+}

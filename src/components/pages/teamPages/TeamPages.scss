@@ -1,0 +1,72 @@
+#team {
+  background: var(--clr-grey-2);
+  height: 100%;
+  position: sticky;
+  padding-top: 100px;
+  .team {
+    position: relative;
+    &--category {
+      width: 100vw;
+      margin-left: calc(-50vw + 49%);
+      background: var(--clr-brown);
+      color: var(--clr-black);
+      &__block {
+        width: 65%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px auto;
+        P {
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 35px;
+      font-weight: 200;
+      padding: 30px;
+    }
+    &--list {
+      width: 80%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-columns: repeat(3, 5fr);
+      margin: 0 auto;
+      img {
+        width: 70%;
+        margin-bottom: 30px;
+      }
+      &__block {
+        text-align: center;
+        margin-bottom: 70px;
+        h3 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+      &__employees {
+        width: 80%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(4, 5fr);
+        margin: 0 auto;
+        gap: 20px;
+        &--name {
+          p {
+            margin-bottom: 5px;
+          }
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

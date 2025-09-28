@@ -1,0 +1,189 @@
+#poster {
+  width: 100%;
+  height: 100%;
+
+  .poster {
+    position: relative;
+    margin-top: 100px;
+
+    &--category {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      background: var(--clr-grey-2);
+
+      &__block {
+        width: 65%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        p {
+          display: inline-block;
+          margin: 0 10px;
+          padding: 5px 10px;
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          cursor: pointer;
+          position: relative;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #007bff;
+          }
+
+          &.active {
+            color: #007bff;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 100%;
+              height: 3px;
+              background-color: #007bff;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    &--big {
+      margin-top: 50px;
+      background: #f4f4f4;
+
+      .poster--list1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .title-with-line {
+          text-align: center;
+
+          h3 {
+            font-size: 25px;
+            font-family: "Scada", sans-serif;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+
+          hr {
+            height: 4px;
+            width: 60%;
+            background-color: var(--clr-red);
+            border: none;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .poster--list {
+        width: 70%;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        justify-items: center;
+
+        &__cart {
+          width: 100%;
+          max-width: 200px;
+          border: 1px solid var(--clr-grey);
+          border-radius: 5px;
+          background: white;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          position: relative;
+          img {
+            width: 100%;
+            height: 220px;
+            display: block;
+          }
+
+          &--block {
+            padding: 10px;
+            height: 190px;
+
+            h3 {
+              text-align: center;
+              font-size: 16px;
+              font-family: "Scada", sans-serif;
+              color: #303030;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+            }
+
+            hr {
+              border: none;
+              border-top: 2px dashed #cacac8;
+              margin: 10px 0;
+            }
+
+            .details {
+              display: flex;
+              align-items: center;
+              color: #6b6b65;
+              margin-bottom: 10px;
+
+              .icons {
+                margin-right: 5px;
+                font-size: 18px;
+              }
+
+              h4,
+              p {
+                font-family: "Scada", sans-serif;
+                font-size: 14px;
+                margin: 0;
+                color: #303030;
+              }
+
+              p {
+                width: 100%;
+                font-size: 12px;
+              }
+            }
+
+            .ticket-icon {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              position: absolute;
+              bottom: 10px;
+              right: 10px;
+              padding: 5px 10px;
+              border-radius: 4px;
+
+              .icon {
+                font-size: 23px;
+                color: var(--clr-red);
+              }
+
+              .ticket-text {
+                background-color: var(--clr-red);
+                color: white;
+                padding: 5px 19px;
+                border-radius: 4px;
+                font-weight: bold;
+                font-size: 15px;
+
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+              }
+            }
+
+            &:hover .ticket-text {
+              opacity: 1;
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

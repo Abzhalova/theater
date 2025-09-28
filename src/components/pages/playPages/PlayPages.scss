@@ -1,0 +1,35 @@
+#play {
+  padding: 50px;
+  .play {
+    h1 {
+      font-size: var(--sz-h1);
+      font-family: "Noto Serif";
+      padding-top: 130px;
+      color: #b17e4b;
+      
+    }
+    h3 {
+      font-size: 30px;
+
+      padding: 40px 10px;
+    }
+    &--list-1 {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: space-around;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    &--list-2 {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: space-around;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    img {
+      width: 400px;
+      height: 280px;
+    }
+  }
+}

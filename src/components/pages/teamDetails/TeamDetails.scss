@@ -1,0 +1,52 @@
+#teamDetails {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  .teamDetails {
+    width: 1200px;
+    margin: 130px 140px;
+    display: flex;
+    align-items: flex-start;
+    img {
+      width: 400px;
+      height: 550px;
+    }
+    &--block {
+      width: 800px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding-right: 20px;
+
+      h3 {
+        font-size: 45px;
+        font-weight: 600;
+        line-height: 1.4em;
+        font-family: "DINPro", sans-serif;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: 400;
+        font-family: "DINPro", sans-serif;
+      }
+      h4 {
+        font-size: 20px;
+      }
+      p {
+        font-family: "Scada", sans-serif;
+      }
+      h4 {
+        font-family: "Scada", sans-serif;
+      }
+      button {
+        width: 180px;
+        height: 35px;
+        border-radius: 5px;
+        border: none;
+        background: var(--clr-red);
+        color: white;
+      }
+    }
+  }
+}
