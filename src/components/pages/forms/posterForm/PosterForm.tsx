@@ -1,3 +1,4 @@
+// PosterForm.tsx
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPoster } from "../../../../redux/slices/posterSlices";
@@ -11,6 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Poster } from "../../../../types/poster";
 
 const categories = ["Спектакли", "Концерты", "Для детей", "Семинары"];
 const days = Array.from({ length: 31 }, (_, i) => (i + 1).toString());
@@ -33,7 +35,7 @@ const hours = Array.from({ length: 24 }, (_, i) =>
 );
 const minutes = ["00", "15", "30", "45"];
 
-const PosterForm = () => {
+const PosterForm: React.FC = () => {
   const dispatch = useDispatch();
 
   type FormType = {
@@ -67,16 +69,19 @@ const PosterForm = () => {
     minute: "",
   });
 
-  const handleChange = (field: string, value: string | number) => {
+  const handleChange = (field: keyof FormType, value: string) => {
     setForm({ ...form, [field]: value });
   };
-  const handleDateChange = (field: string, value: string) =>
+
+  const handleDateChange = (field: keyof typeof dateInput, value: string) => {
     setDateInput({ ...dateInput, [field]: value });
+  };
 
   const addDate = () => {
     const { day, month, hour, minute } = dateInput;
-    if (!day || !month || !hour || !minute)
+    if (!day || !month || !hour || !minute) {
       return alert("Заполните дату полностью!");
+    }
     setForm((prev) => ({ ...prev, dates: [...prev.dates, { ...dateInput }] }));
     setDateInput({ day: "", month: "", hour: "", minute: "" });
   };
@@ -94,13 +99,22 @@ const PosterForm = () => {
       return alert("Заполните все обязательные поля!");
     }
 
-    const newPoster = {
-      ...form,
+    const newPoster: Poster = {
       id: Date.now().toString(),
-      price: Number(form.price),
-      ageLimit: Number(form.ageLimit),
+      title: form.title,
+      description: form.description || undefined,
+      duration: form.duration ? Number(form.duration) : undefined,
+      price: Number(form.price) || 0,
+      locationName: form.locationName,
+      ageLimit: form.ageLimit ? Number(form.ageLimit) : undefined,
+      image: form.image,
+      category: form.category,
+      dates: form.dates,
     };
+
     dispatch(addPoster(newPoster));
+
+    // Сброс формы
     setForm({
       title: "",
       description: "",
