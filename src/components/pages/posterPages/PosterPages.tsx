@@ -16,7 +16,6 @@ const PosterPages = () => {
     navigate(`/posterDetails/${posterId}`);
   };
 
-  // Категория аттарын Reduxтагы category менен туура дал келтирүү картасы
   const categoryMap: Record<string, string> = {
     Спектакли: "Спектаклдер",
     Концерты: "Концерттер",
@@ -24,7 +23,6 @@ const PosterPages = () => {
     Семинары: "Семинарлар",
   };
 
-  // Фильтрленген постерлер
   const filteredPosters =
     selectedCategory === "Баары"
       ? posters
