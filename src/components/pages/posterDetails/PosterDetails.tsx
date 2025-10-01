@@ -23,9 +23,9 @@ const PosterDetails = () => {
             <div className="poster--details__list">
               <h3>{poster.title}</h3>
 
-              {poster.description && (
+              {/* {poster.description && (
                 <p className="poster-description">{poster.description}</p>
-              )}
+              )} */}
 
               <div className="month">
                 {poster.dates.map((d, i) => (
@@ -52,7 +52,7 @@ const PosterDetails = () => {
                 <p>{poster.locationName}</p>
               </div>
 
-              {poster.duration && (
+              {/* {poster.duration && (
                 <p>
                   ⏱ Длительность: <strong>{poster.duration} ч.</strong>
                 </p>
@@ -61,7 +61,7 @@ const PosterDetails = () => {
                 <p>
                   🔞 Возрастное ограничение: <strong>{poster.ageLimit}+</strong>
                 </p>
-              )}
+              )} */}
               <p>Категория: {poster.category}</p>
             </div>
           </div>
