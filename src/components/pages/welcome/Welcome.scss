@@ -1,0 +1,40 @@
+#welcome {
+  width: 100%;
+  min-height: 80.9vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: darken;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .welcome-slider {
+    width: 100%;
+    max-width: 800px;
+    .slide {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 36px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      // background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      button {
+        padding: 10px 40px;
+        font-size: 18px;
+        border-radius: 5px;
+        background: var(--clr-brown);
+        border: none;
+        color: white;
+      }
+    }
+  }
+
+  .slick-dots li button:before {
+    color: #fff;
+  }
+}

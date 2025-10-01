@@ -4,13 +4,17 @@ import Header from "../components/layout/header/Header";
 import Footer from "../components/layout/footer/Footer";
 import Home from "../components/pages/home/Home";
 import RepertoirePages from "../components/pages/repertoire/RepertoirePages";
-import AfishaPages from "../components/pages/afisha/AfishaPages";
-import SpectaklPages from "../components/pages/spectaklPages/SpectaklPages";
-import TheatrePages from "../components/pages/theartePages/TheatrePages";
-import ComandaPages from "../components/pages/comandaPages/ComandaPages";
+import TheatrePages from "../components/pages/theaterPages/TheatrePages";
 import GalleryPages from "../components/pages/gallery/GalleryPages";
-import Abonement from "../components/pages/abonement/Abonement";
 import NotFound from "../components/pages/notFound/NotFound";
+import PosterPages from "../components/pages/posterPages/PosterPages";
+import PosterDetails from "../components/pages/posterDetails/PosterDetails";
+import PlayPages from "../components/pages/playPages/PlayPages";
+import PlayDetails from "../components/pages/playDetails/PlayDetails";
+import Subscription from "../components/pages/subscription/Subscription";
+import TeamPages from "../components/pages/teamPages/TeamPages";
+import TeamDetails from "../components/pages/teamDetails/TeamDetails";
+import CreateList from "../components/pages/createList/CreateList";
 
 const RoutesApp = () => {
   const routes = [
@@ -27,12 +31,12 @@ const RoutesApp = () => {
     {
       id: 3,
       path: "/poster",
-      element: <AfishaPages />,
+      element: <PosterPages />,
     },
     {
       id: 4,
       path: "/play",
-      element: <SpectaklPages />,
+      element: <PlayPages />,
     },
     {
       id: 5,
@@ -42,7 +46,7 @@ const RoutesApp = () => {
     {
       id: 6,
       path: "/team",
-      element: <ComandaPages />,
+      element: <TeamPages />,
     },
     {
       id: 7,
@@ -52,15 +56,35 @@ const RoutesApp = () => {
     {
       id: 8,
       path: "/subscription",
-      element: <Abonement />,
+      element: <Subscription />,
     },
     {
       id: 9,
+      path: "/posterDetails/:id", 
+      element: <PosterDetails />,
+    },
+    {
+      id: 10,
+      path: "/playDetails",
+      element: <PlayDetails />,
+    },
+    {
+      id: 11,
+      path: "/teamDetails",
+      element: <TeamDetails />,
+    },
+    {
+      id: 12,
+      path: "/createList",
+      element: <CreateList />,
+    },
+    {
+      id: 13,
       path: "*",
       element: <NotFound />,
-    }
+    },
   ];
- 
+
   return (
     <div>
       <Header />

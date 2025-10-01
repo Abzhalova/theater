@@ -1,0 +1,21 @@
+#create {
+  margin-top: 110px;
+
+  .create {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .category{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      h3{
+      font-family: Scada, serif;
+
+      }
+    }
+  }
+}
