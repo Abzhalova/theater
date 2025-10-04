@@ -45,6 +45,10 @@ const CreateList = () => {
     setRepertoires((prev) => [...prev, data]);
   };
 
+  const addRepertoire = (data: Repertoire) => {
+    setRepertoires((prev) => [...prev, data]);
+  };
+
   return (
     <section id="create">
       <div className="container">
@@ -72,17 +76,47 @@ const CreateList = () => {
                 },
               }}
             >
-              <MenuItem onClick={handlePosterClick} sx={{ fontFamily: "Scada, serif" }}>АФИША</MenuItem>
-              <MenuItem onClick={handleClose} sx={{ fontFamily: "Scada, serif" }}>СПЕКТАКЛЬ</MenuItem>
-              <MenuItem onClick={handleClose} sx={{ fontFamily: "Scada, serif" }}>ИНФОРМАЦИЯ О ТЕАТРЕ</MenuItem>
-              <MenuItem onClick={handleClose} sx={{ fontFamily: "Scada, serif" }}>КОМАНДА</MenuItem>
-              <MenuItem onClick={handleClose} sx={{ fontFamily: "Scada, serif" }}>ГАЛЕРЕЯ</MenuItem>
-              <MenuItem onClick={handleRepertoireClick} sx={{ fontFamily: "Scada, serif" }}>РЕПЕРТУАР</MenuItem>
+              <MenuItem
+                onClick={handlePosterClick}
+                sx={{ fontFamily: "Scada, serif" }}
+              >
+                АФИША
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                sx={{ fontFamily: "Scada, serif" }}
+              >
+                СПЕКТАКЛЬ
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                sx={{ fontFamily: "Scada, serif" }}
+              >
+                ИНФОРМАЦИЯ О ТЕАТРЕ
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                sx={{ fontFamily: "Scada, serif" }}
+              >
+                КОМАНДА
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                sx={{ fontFamily: "Scada, serif" }}
+              >
+                ГАЛЕРЕЯ
+              </MenuItem>
+              <MenuItem
+                onClick={handleRepertoireClick}
+                sx={{ fontFamily: "Scada, serif" }}
+              >
+                РЕПЕРТУАР
+              </MenuItem>
             </Menu>
           </div>
 
           {showPosterForm && <PosterForm />}
-          {showRepertoireForm && <RepertoireForm onAdd={handleAddRepertoire} />}
+          {showRepertoireForm && <RepertoireForm onAdd={addRepertoire} />}
         </div>
       </div>
     </section>
