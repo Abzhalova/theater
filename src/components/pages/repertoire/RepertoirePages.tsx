@@ -23,9 +23,7 @@ const RepertoirePages = () => {
   const [repertoires, setRepertoires] = useState<Repertoire[]>([]);
 
   // формадан кошулган маалыматты кабыл алуу функциясы
-  const addRepertoire = (data: Repertoire) => {
-    setRepertoires((prev) => [...prev, data]);
-  };
+
   return (
     <section id="repertoire">
       <div className="container">
@@ -37,6 +35,7 @@ const RepertoirePages = () => {
               </div>
             </div>
           </div>
+
           <div className="repertoire--list2">
             <div className="season">
               <h2>
@@ -46,28 +45,34 @@ const RepertoirePages = () => {
               </h2>
               <p>16 СЕЗОН</p>
             </div>
+
+            {/* Репертуарлардын тизмеси */}
             <div>
-              <div className="repertoire--list2__block">
-                <div className="timeBlock">
-                  <p>8</p>
-                  <div className="timeBlock--minutes">
-                    <p>СБ</p>
-                    <p>18:00</p>
+              {repertoires.map((rep, i) => (
+                <div key={i} className="repertoire--list2__block">
+                  <div className="timeBlock">
+                    <p>{new Date(rep.date).getDate()}</p>
+                    <div className="timeBlock--minutes">
+                      <p>
+                        {new Date(rep.date).toLocaleDateString("ky-KG", {
+                          weekday: "short",
+                        })}
+                      </p>
+                      <p>{rep.time}</p>
+                    </div>
+                  </div>
+                  <div className="nameBlock">
+                    <p>{rep.name}</p>
+                  </div>
+                  <div className="genreBlock">
+                    <p>{rep.genre}</p>
+                    <div style={{ display: "flex" }}>
+                      <p>{rep.ageLimit}</p>
+                    </div>
+                    <p>{rep.price} сом</p>
                   </div>
                 </div>
-                <div className="nameBlock">
-                  <p>Жамийла</p>
-                </div>
-                <div className="genreBlock">
-                  <p>Нурбек Урматжан</p>
-                  <div style={{ display: "flex" }}>
-                    {" "}
-                    <p>Драма</p>
-                    <p style={{ marginLeft: "8px" }}>7+</p>
-                  </div>
-                  <p>200 сом</p>
-                </div>
-              </div>
+              ))}
               <hr style={{ border: "1px solid black", margin: "13px 0" }} />
             </div>
           </div>
@@ -75,7 +80,6 @@ const RepertoirePages = () => {
           <div className="listAddress">
             <div className="listAddress--adminPart">
               <div style={{ marginBottom: "10px" }}>
-                {" "}
                 <p>
                   Театрдын директору
                   <br />
@@ -86,7 +90,6 @@ const RepertoirePages = () => {
                 </p>
               </div>
               <div>
-                {" "}
                 <p>
                   Театрдын корком жетекчиси
                   <br />
@@ -98,22 +101,18 @@ const RepertoirePages = () => {
               </div>
             </div>
             <div className="listAddress--number">
-              {" "}
               <p>Биздин дарек: Ч.Айтматов 351</p>
               <p>Администрация: +996 (503) 096-909</p>
             </div>
             <div className="listAddress--icons">
               <a href="#">
-                <FaFacebookF />
-                Талас Драм Театры
+                <FaFacebookF /> Талас Драм Театры
               </a>
               <a href="#">
-                <GrInstagram />
-                talas_teatr
+                <GrInstagram /> talas_teatr
               </a>
               <a href="#">
-                <ImWhatsapp />
-                +996 (503) 096-909
+                <ImWhatsapp /> +996 (503) 096-909
               </a>
             </div>
           </div>
