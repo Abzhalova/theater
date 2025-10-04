@@ -1,8 +1,11 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Poster {
   id: string;
   title: string;
+  duration?: number;
+  ageLimit?: number;
+  description?: string;
   category: string;
   image: string;
   price: number;
@@ -17,7 +20,7 @@ interface PosterState {
 
 const loadPosters = (): Poster[] => {
   try {
-    const data = localStorage.getItem('posters');
+    const data = localStorage.getItem("posters");
     if (data) return JSON.parse(data);
     return [];
   } catch (e) {
@@ -27,26 +30,26 @@ const loadPosters = (): Poster[] => {
 };
 
 const initialState: PosterState = {
-  posters: loadPosters(), 
+  posters: loadPosters(),
   selectedCategory: "Баары",
 };
 
 const posterSlice = createSlice({
-  name: 'poster',
+  name: "poster",
   initialState,
   reducers: {
     addPoster: (state, action: PayloadAction<Poster>) => {
       state.posters.push(action.payload);
-      localStorage.setItem('posters', JSON.stringify(state.posters));
+      localStorage.setItem("posters", JSON.stringify(state.posters));
     },
     updatePoster: (state, action: PayloadAction<Poster>) => {
-      const index = state.posters.findIndex(p => p.id === action.payload.id);
+      const index = state.posters.findIndex((p) => p.id === action.payload.id);
       if (index !== -1) state.posters[index] = action.payload;
-      localStorage.setItem('posters', JSON.stringify(state.posters));
+      localStorage.setItem("posters", JSON.stringify(state.posters));
     },
     removePoster: (state, action: PayloadAction<string>) => {
-      state.posters = state.posters.filter(p => p.id !== action.payload);
-      localStorage.setItem('posters', JSON.stringify(state.posters));
+      state.posters = state.posters.filter((p) => p.id !== action.payload);
+      localStorage.setItem("posters", JSON.stringify(state.posters));
     },
     setCategory: (state, action: PayloadAction<string>) => {
       state.selectedCategory = action.payload;
@@ -54,5 +57,6 @@ const posterSlice = createSlice({
   },
 });
 
-export const { addPoster, updatePoster, removePoster, setCategory } = posterSlice.actions;
+export const { addPoster, updatePoster, removePoster, setCategory } =
+  posterSlice.actions;
 export default posterSlice.reducer;

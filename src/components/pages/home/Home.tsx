@@ -1,11 +1,12 @@
+import Subscription from "../subscription/Subscription";
 import Welcome from "../welcome/Welcome";
 import "./Home.scss";
-
 
 const Home = () => {
   return (
     <>
-     <Welcome/>
+      <Welcome />
+      <Subscription />
     </>
   );
 };
