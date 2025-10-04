@@ -11,6 +11,7 @@ import PosterPages from "../components/pages/posterPages/PosterPages";
 import PosterDetails from "../components/pages/posterDetails/PosterDetails";
 import PlayPages from "../components/pages/playPages/PlayPages";
 import PlayDetails from "../components/pages/playDetails/PlayDetails";
+
 import Subscription from "../components/pages/subscription/Subscription";
 import TeamPages from "../components/pages/teamPages/TeamPages";
 import TeamDetails from "../components/pages/teamDetails/TeamDetails";
@@ -82,7 +83,7 @@ const RoutesApp = () => {
       id: 13,
       path: "*",
       element: <NotFound />,
-    },
+    }
   ];
 
   return (

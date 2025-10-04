@@ -1,3 +1,4 @@
+// PosterDetails.tsx
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -6,8 +7,9 @@ import { MdLocationOn } from "react-icons/md";
 import { TbCurrencyCent } from "react-icons/tb";
 import "./PosterDetails.scss";
 
-const PosterDetails = () => {
+const PosterDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+
   const poster = useSelector((state: RootState) =>
     state.poster.posters.find((p) => p.id === id)
   );
@@ -22,10 +24,6 @@ const PosterDetails = () => {
             <img src={poster.image} alt={poster.title} />
             <div className="poster--details__list">
               <h3>{poster.title}</h3>
-
-              {/* {poster.description && (
-                <p className="poster-description">{poster.description}</p>
-              )} */}
 
               <div className="month">
                 {poster.dates.map((d, i) => (
@@ -43,7 +41,7 @@ const PosterDetails = () => {
               <div className="month--block">
                 <TbCurrencyCent className="month--icons" />
                 <p>
-                  Стоимость: <span>{poster.price} сом</span>
+                  Стоимость: <span>{poster.price.toLocaleString()} сом</span>
                 </p>
               </div>
 
@@ -52,19 +50,25 @@ const PosterDetails = () => {
                 <p>{poster.locationName}</p>
               </div>
 
-              {/* {poster.duration && (
+              {poster.duration !== undefined && (
                 <p>
                   ⏱ Длительность: <strong>{poster.duration} ч.</strong>
                 </p>
               )}
-              {poster.ageLimit && (
+
+              {poster.ageLimit !== undefined && (
                 <p>
                   🔞 Возрастное ограничение: <strong>{poster.ageLimit}+</strong>
                 </p>
-              )} */}
-              <p>Категория: {poster.category}</p>
+              )}
+
+              {poster.category && <p>Категория: {poster.category}</p>}
             </div>
           </div>
+
+          {poster.description && (
+            <p className="poster-description">{poster.description}</p>
+          )}
         </div>
       </div>
     </section>
