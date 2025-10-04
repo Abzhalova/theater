@@ -5,7 +5,6 @@ declare module "*.scss" {
 
 declare module "*.css";
 
-
 declare module "*.png" {
   const value: string;
   export default value;
@@ -31,7 +30,6 @@ declare module "*.svg" {
   export default value;
 }
 
-
 declare module "aos" {
   interface AosOptions {
     offset?: number;
@@ -46,5 +44,3 @@ declare module "aos" {
   export function init(options?: AosOptions): void;
   export function refresh(): void;
 }
-
-
