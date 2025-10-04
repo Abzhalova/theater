@@ -1,0 +1,52 @@
+#repertoireForm {
+  margin-top: 40px;
+
+  .repertoireForm {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--clr-grey);
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+      text-align: center;
+      font-family: "Onest", sans-serif;
+    }
+
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      input {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: inherit;
+      }
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: black;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background: #333;
+      }
+    }
+  }
+}

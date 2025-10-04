@@ -1,13 +1,22 @@
-import React from "react";
 import "./Subscription.scss";
 import Abonement1 from "../../../assets/images/abonement1.jpg";
 import Abonement2 from "../../../assets/images/abonement2.jpg";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Subscription = () => {
+  useEffect(() => {
+    AOS.init({});
+  }, []);
   return (
     <div id="subscription">
       <div className="container">
-        <div className="subscription">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          className="subscription"
+        >
           <center>
             <h1>Абонемент </h1>
           </center>
